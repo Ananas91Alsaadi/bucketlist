@@ -1,0 +1,1228 @@
+@keyframes mymove {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(72deg); }
+  50% {
+    transform: rotate(144deg); }
+  75% {
+    transform: rotate(216deg); }
+  100% {
+    transform: rotate(360deg); } }
+@font-face {
+  font-family: OpenSansP;
+  src: url("Font/Open_Sans/OpenSans-Regular.ttf"); }
+@font-face {
+  font-family: Oswald;
+  src: url("Font/static/Oswald-Regular.ttf"); }
+body {
+  max-width: 414px;
+  margin: 0 auto;
+  font-family: Oswald; }
+  body input:focus {
+    outline: none; }
+  body a {
+    color: black;
+    text-decoration: none; }
+  body ul {
+    list-style: none;
+    padding: 0; }
+  body .cubebuttons {
+    text-align: center;
+    font-size: 5vw;
+    width: 7vw;
+    height: 7vw;
+    background: #FFFFFF; }
+    body .cubebuttons:hover {
+      filter: brightness(1.2);
+      pointer-events: none; }
+  body .textinput {
+    font-size: 3.4vw;
+    font-style: italic;
+    width: 100%;
+    color: #000;
+    border: 0px;
+    border-bottom: solid 1px #aaa; }
+  body .header2 {
+    background: -webkit-linear-gradient(top, #feeee4, #feeee4, #feeee4, #feeee4, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    background: -moz-linear-gradient(top, #feeee4, #feeee4, #feeee4, #feeee4, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    background: -o-linear-gradient(top, #feeee4, #feeee4, #feeee4, #feeee4, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    background: linear-gradient(top, #feeee4, #feeee4, #feeee4, #feeee4, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    padding-bottom: 45%; }
+  body header {
+    background: -webkit-linear-gradient(top, #fefbee, #fefbee, #fefbee, #fefbee, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    background: -moz-linear-gradient(top, #fefbee, #fefbee, #fefbee, #fefbee, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    background: -o-linear-gradient(top, #fefbee, #fefbee, #fefbee, #fefbee, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    background: linear-gradient(top, #fefbee, #fefbee, #fefbee, #fefbee, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    padding-top: 10%;
+    padding-bottom: 50%;
+    position: absolute;
+    width: 100%;
+    z-index: 1; }
+    body header h1 {
+      font-family: OpenSansP;
+      text-align: center;
+      margin: 0; }
+    body header img {
+      display: none; }
+  body .arrows {
+    width: 5%;
+    height: 5%;
+    border-color: #000;
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transition: 0.3s ease; }
+  body .prev {
+    transform: rotate(45deg);
+    left: 3%; }
+    body .prev:hover {
+      left: 2%; }
+  body .next {
+    transform: rotate(-135deg);
+    right: 3%; }
+    body .next:hover {
+      right: 2%; }
+  body .space {
+    height: 100px; }
+  body .nav2 {
+    background: #feeee4; }
+    body .nav2 .menulist {
+      background: -webkit-linear-gradient(90deg, #feeee4, #feeee4, #feeee4, #feeee4, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+      background: -moz-linear-gradient(90deg, #feeee4, #feeee4, #feeee4, #feeee4, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+      background: -o-linear-gradient(90deg, #feeee4, #feeee4, #feeee4, #feeee4, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+      background: linear-gradient(90deg, #feeee4, #feeee4, #feeee4, #feeee4, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); }
+      body .nav2 .menulist ul li:hover {
+        color: #F3B183; }
+  body nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    padding: 3% 2% 3% 0;
+    margin: 0 auto;
+    padding: 0 10%;
+    height: 60px;
+    font-size: 34px;
+    background: #fefbee;
+    z-index: 10;
+    border-bottom: double 4px; }
+    body nav #ontop {
+      z-index: 2; }
+    body nav lable {
+      display: none; }
+    body nav button {
+      font-size: 6vw;
+      font-weight: normal;
+      border: solid 1px;
+      border-radius: 50%;
+      width: 10vw;
+      height: 10vw;
+      text-align: center;
+      background: rgba(0, 0, 0, 0); }
+      body nav button:focus {
+        pointer-events: none;
+        outline: none; }
+      body nav button:focus + .menulist {
+        transform: rotateY(0deg);
+        left: 17.7%; }
+    body nav .menulist {
+      position: absolute;
+      width: 75%;
+      border: solid 1px;
+      z-index: 1;
+      margin-top: 70vw;
+      left: 0%;
+      height: 80vw;
+      border-bottom-right-radius: 100%;
+      border-top-left-radius: 8%;
+      transform: rotateY(90deg);
+      transition: left 1s ease;
+      background: -webkit-linear-gradient(90deg, #fefbee, #fefbee, #fefbee, #fefbee, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+      background: -moz-linear-gradient(90deg, #fefbee, #fefbee, #fefbee, #fefbee, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+      background: -o-linear-gradient(90deg, #fefbee, #fefbee, #fefbee, #fefbee, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+      background: linear-gradient(90deg, #fefbee, #fefbee, #fefbee, #fefbee, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); }
+      body nav .menulist ul {
+        font-family: OpenSansP;
+        padding: 1% 17%;
+        font-size: 5vw;
+        text-align: left; }
+        body nav .menulist ul li:hover {
+          color: #7FA5BE; }
+    body nav hr {
+      position: absolute;
+      border: 3px double;
+      width: 85%;
+      left: 6.5%;
+      top: 66%; }
+    body nav .userlogin {
+      display: none; }
+  body .main3 {
+    font-family: OpenSansP;
+    font-size: 3.5vw; }
+    body .main3 .basket {
+      text-align: center; }
+      body .main3 .basket span {
+        background: #FFFFFF;
+        padding: 0 3%; }
+    body .main3 .cheut {
+      text-align: center;
+      margin-top: 20%; }
+    body .main3 .books figure a:hover + figcaption > h3 {
+      color: #F3B183; }
+    body .main3 .books figure i:hover {
+      color: #F3B183; }
+    body .main3 .books figure i:hover + p {
+      color: #F3B183; }
+  body .main2 {
+    font-family: OpenSansP;
+    font-size: 3.5vw; }
+    body .main2 .bookinfo2 {
+      display: none; }
+    body .main2 .herobutton {
+      box-shadow: 0px 0px;
+      color: #000;
+      background: #9cd2c7; }
+      body .main2 .herobutton:hover {
+        box-shadow: 0px 0px #fff;
+        transform: translate(1px, 1px);
+        pointer-events: none; }
+    body .main2 .bookinfo {
+      font-size: 4vw;
+      width: 85%;
+      margin: 15% auto 0 auto;
+      border-bottom: double 4px #f39452; }
+      body .main2 .bookinfo h2 {
+        margin-bottom: 0; }
+      body .main2 .bookinfo img {
+        display: block;
+        width: 70%;
+        margin: 7% auto; }
+    body .main2 .buyinfo {
+      width: 85%;
+      position: relative;
+      margin: 0 auto;
+      padding: 5% 0 0 0;
+      font-size: 3.4vw; }
+      body .main2 .buyinfo p {
+        margin: 1% 0; }
+      body .main2 .buyinfo .price {
+        font-weight: bold;
+        font-size: 5vw;
+        margin-bottom: 2%; }
+      body .main2 .buyinfo .herobutton {
+        top: 15%;
+        left: 50%;
+        width: 45%;
+        padding-left: 5%; }
+      body .main2 .buyinfo .addwish {
+        top: 63%; }
+    body .main2 .books figure a:hover + figcaption > h3 {
+      color: #F3B183; }
+    body .main2 .books figure i:hover {
+      color: #F3B183; }
+    body .main2 .books figure i:hover + p {
+      color: #F3B183; }
+    body .main2 .info {
+      width: 85%;
+      margin: -3% auto 0 auto;
+      border-bottom: double 4px #f39452; }
+    body .main2 ul {
+      width: 85%;
+      margin: 5% auto;
+      padding: 0; }
+      body .main2 ul li {
+        margin: 2% 0; }
+  body main {
+    margin-bottom: 10%; }
+    body main .hero {
+      position: relative; }
+    body main .herobutton {
+      text-align: center;
+      font-weight: bolder;
+      font-size: 4vw;
+      padding: 3%;
+      position: absolute;
+      top: 65%;
+      left: 70%;
+      background: #fff;
+      color: #86c6aa;
+      border-radius: 25px;
+      box-shadow: 2px 2px #aaa; }
+      body main .herobutton:hover {
+        box-shadow: 0px 0px #fff;
+        transform: translate(2px, 2px);
+        pointer-events: none; }
+    body main .heroimg {
+      width: 100%;
+      height: 90vw; }
+    body main .titles {
+      text-align: end;
+      width: 85%;
+      margin: 7% auto;
+      position: relative;
+      color: #f6ae7e;
+      font-weight: normal;
+      border-bottom: 4px double;
+      line-height: 0px; }
+      body main .titles span {
+        background: #FFFFFF;
+        padding-left: 3%; }
+    body main .mainspart {
+      display: flex;
+      flex-direction: column;
+      padding: 10% 0;
+      position: relative; }
+    body main .books {
+      display: flex;
+      align-items: flex-end;
+      width: 85%;
+      margin: 0 auto;
+      justify-content: space-between; }
+      body main .books figure {
+        display: inline-block;
+        width: 50%;
+        margin: 0 3%;
+        font-size: 8vw; }
+        body main .books figure img {
+          width: 100%;
+          border: 1px solid;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+          -webkit-transition: 0.5s ease;
+          transition: 0.5s ease; }
+          body main .books figure img:hover {
+            border-radius: 10px;
+            opacity: 0.8;
+            -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+            border: 2px solid; }
+        body main .books figure a:hover + figcaption > h3 {
+          color: #7FA5BE; }
+        body main .books figure figcaption {
+          padding: 0;
+          float: left;
+          font-size: 3.5vw;
+          border-bottom: 1px solid;
+          width: 100%;
+          padding-bottom: 2%; }
+          body main .books figure figcaption h3 {
+            font-family: OpenSansP;
+            margin: 0; }
+        body main .books figure p {
+          font-family: OpenSansP;
+          font-size: 3.5vw;
+          float: left;
+          margin: 0;
+          font-weight: bolder; }
+        body main .books figure i {
+          font-size: 6vw;
+          float: right;
+          margin-right: 5%; }
+          body main .books figure i:hover {
+            color: #7FA5BE; }
+          body main .books figure i:hover + p {
+            color: #7FA5BE; }
+        body main .books figure div {
+          margin-top: 35%; }
+      body main .books .ipad {
+        display: none; }
+      body main .books .computer {
+        display: none; }
+    body main .links {
+      width: 85%;
+      margin: 0 auto; }
+      body main .links .link {
+        border-radius: 5px;
+        font-size: 4vw;
+        font-family: OpenSansP;
+        position: relative;
+        background: #feeee4;
+        text-align: center;
+        padding: 0.5%;
+        margin: 3% 0;
+        font-weight: bolder; }
+        body main .links .link .next {
+          right: 6%; }
+        body main .links .link:hover .next {
+          right: 3%; }
+        body main .links .link .arrows {
+          width: 4%;
+          height: 20%;
+          top: 90%;
+          border-bottom: 1px solid;
+          border-left: 1px solid;
+          transition: 0.5s ease; }
+    body main .discount {
+      font-size: 3vw;
+      font-weight: bold;
+      font-family: OpenSansP;
+      position: relative;
+      margin: 10% auto;
+      width: 80%;
+      background: #f3b183;
+      padding: 10% 2% 20% 5%; }
+      body main .discount h2 {
+        font-family: Oswald;
+        font-weight: bolder;
+        width: 70%;
+        border-bottom: 3px double;
+        padding-bottom: 5%; }
+      body main .discount .herobutton {
+        color: #f3b183;
+        top: 70%;
+        left: 35%;
+        background: #fff;
+        box-shadow: 2px 2px #aaa; }
+        body main .discount .herobutton:hover {
+          box-shadow: 0px 0px #fff; }
+    body main .aboutus {
+      font-size: 3vw;
+      font-weight: bold;
+      font-family: OpenSansP;
+      margin: 5% auto;
+      width: 80%;
+      background: #abd7c7;
+      padding: 10% 2% 5% 5%; }
+      body main .aboutus h2 {
+        font-family: Oswald;
+        font-weight: bolder;
+        width: 70%;
+        border-bottom: 3px double;
+        padding-bottom: 5%; }
+    body main small {
+      font-family: OpenSansP;
+      font-style: italic;
+      color: #3A3A3A; }
+    body main .cube {
+      background: #90cec5;
+      font-size: 7vw;
+      color: #fff;
+      width: 12vw;
+      height: 11vw;
+      padding-top: 1vw;
+      text-align: center; }
+    body main .cube2 {
+      background: #f7ec64; }
+    body main .cube3 {
+      background: #c9a170; }
+    body main .reviw {
+      padding: 0 4%; }
+      body main .reviw .revn {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 9%; }
+        body main .reviw .revn .icon strong {
+          font-weight: bolder;
+          margin-top: 5%;
+          float: right; }
+        body main .reviw .revn .revbody {
+          width: 80%; }
+          body main .reviw .revn .revbody h4 {
+            margin: 0; }
+          body main .reviw .revn .revbody small {
+            color: #000; }
+      body main .reviw .rate {
+        margin: 20% 0 15% 0; }
+        body main .reviw .rate .rating {
+          margin: 2.5% 0 0 0;
+          font-weight: bold;
+          font-size: 4vw;
+          padding-left: 20%;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          width: 50%; }
+          body main .reviw .rate .rating .numbers:hover {
+            border-bottom: 2px solid #00D5C5; }
+          body main .reviw .rate .rating .herobutton {
+            font-size: 2.5vw;
+            top: 0%;
+            left: 110%;
+            width: 20%; }
+    body main .viewbutton {
+      font-size: 3.5vw;
+      font-family: Oswald;
+      float: right;
+      border-bottom: 1px solid;
+      margin: -5% 0 0 0; }
+      body main .viewbutton:hover {
+        color: #7FA5BE;
+        border-color: #7FA5BE; }
+    body main .goback {
+      position: relative;
+      display: flex;
+      margin: 0 auto; }
+      body main .goback:hover .prev {
+        left: 4%; }
+      body main .goback p {
+        font-size: 3vw;
+        margin: 0 10%; }
+      body main .goback .arrows {
+        position: absolute;
+        width: 3vw;
+        height: 3vw;
+        top: 8vw;
+        left: 7%; }
+    body main .tobuy {
+      position: relative;
+      display: flex;
+      background: #f6f6f6;
+      margin: 10% 0 10% 7.5%;
+      padding: 3%; }
+      body main .tobuy .tobuyimg {
+        width: 35%; }
+        body main .tobuy .tobuyimg img {
+          width: 100%; }
+      body main .tobuy .mainquant {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        margin: 0 0 0 3%;
+        font-size: 3vw;
+        padding: 5% 0; }
+        body main .tobuy .mainquant .quantity {
+          display: flex;
+          align-content: center;
+          align-items: center; }
+          body main .tobuy .mainquant .quantity p {
+            margin-right: 4%; }
+          body main .tobuy .mainquant .quantity div {
+            display: flex; }
+            body main .tobuy .mainquant .quantity div p {
+              margin: 0; }
+            body main .tobuy .mainquant .quantity div input {
+              text-align: center;
+              width: 7vw;
+              height: 7vw;
+              border: 0px;
+              margin: 0;
+              padding: 0; }
+            body main .tobuy .mainquant .quantity div .quantminus {
+              background: #E4E4E4; }
+              body main .tobuy .mainquant .quantity div .quantminus:hover {
+                filter: brightness(1.05); }
+            body main .tobuy .mainquant .quantity div .quantplus {
+              background: #f3b183;
+              color: #FFFFFF; }
+      body main .tobuy .Xbutton {
+        position: absolute;
+        top: -7%;
+        left: 90%;
+        color: #f3b183; }
+      body main .tobuy .price {
+        font-size: 4.5vw;
+        font-weight: bold;
+        position: absolute;
+        top: 25%;
+        left: 75%; }
+    body main .addbuttons {
+      color: #F3B183;
+      margin-left: 10%;
+      font-size: 4vw;
+      transition: 0.5s ease;
+      border: 2px solid #F3B183; }
+      body main .addbuttons:hover {
+        border: 2px solid #000;
+        background: #F3B183;
+        color: #000; }
+    body main .gift {
+      flex-direction: column;
+      justify-content: space-around; }
+      body main .gift input {
+        background: #f6f6f6;
+        width: 60%;
+        height: 5vw;
+        padding: 0;
+        margin: 0 5% 0 0; }
+      body main .gift div {
+        font-size: 2.7vw;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        margin: 0 0 2% 0; }
+        body main .gift div p {
+          text-align: center;
+          padding: 1%;
+          margin: 3% 0 0 0;
+          background: #fff;
+          border-radius: 10px; }
+    body main .totalprice {
+      text-align: end;
+      margin: 0 7.5% 10% 0; }
+      body main .totalprice h2 {
+        margin: 1% 0 0 0; }
+    body main .loginbuttons {
+      display: flex;
+      font-size: 4vw;
+      position: relative;
+      margin: 5% auto;
+      background: #90cec5;
+      width: 70%;
+      height: 14vw;
+      color: #FFFFFF;
+      padding: 0 7%;
+      border-radius: 20px;
+      align-items: center; }
+      body main .loginbuttons:hover .next {
+        right: 2%; }
+      body main .loginbuttons .arrows {
+        top: 12vw;
+        width: 5vw;
+        height: 5vw; }
+    body main .or {
+      text-align: center; }
+    body main .orbody {
+      flex-direction: column;
+      justify-content: space-around; }
+      body main .orbody input {
+        margin: 4% 0;
+        width: 75%; }
+    body main .delivery {
+      display: flex;
+      flex-direction: column; }
+      body main .delivery label {
+        margin: 1% 7.5%;
+        z-index: 2; }
+        body main .delivery label input {
+          background: #00FFDB; }
+      body main .delivery .gift2 {
+        margin-top: -7%;
+        padding-top: 6%;
+        margin-bottom: 0; }
+    body main .finish {
+      text-align: center;
+      background: #f3b183;
+      padding: 1% 0 0 0;
+      width: 50%;
+      font-size: 4vw;
+      margin: 5% auto;
+      height: 7vw;
+      color: #fff;
+      border-radius: 8px; }
+      body main .finish:hover {
+        filter: brightness(1.1);
+        transform: translate(1px, 1px);
+        pointer-events: none; }
+  body footer {
+    font-size: 3.5vw;
+    font-family: OpenSansP;
+    margin-bottom: 0%;
+    width: 98%;
+    text-align: center; }
+    body footer h3 {
+      width: 85%;
+      border-bottom: double 3px;
+      margin: 30% auto 10% auto;
+      padding-bottom: 5%; }
+    body footer .fa {
+      font-size: 22px;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      color: #fff;
+      background: #d00;
+      padding: 3% 1.5% 0 1.5%;
+      animation: mymove 10s infinite; }
+    body footer .contact {
+      display: flex;
+      justify-content: space-around;
+      width: 60%;
+      margin: auto; }
+      body footer .contact i {
+        filter: brightness(0.95);
+        transition: 1s ease; }
+        body footer .contact i:hover {
+          filter: brightness(2); }
+    body footer ul {
+      font-weight: bolder;
+      width: 47%; }
+      body footer ul li:hover {
+        color: #7FA5BE; }
+    body footer .leftmenufoot {
+      float: left;
+      text-align: start; }
+    body footer .rightmenufoot {
+      float: right;
+      text-align: end; }
+    body footer .footmenu {
+      width: 85%;
+      margin: 0 auto; }
+
+@media (min-width: 415px) {
+  body {
+    max-width: 768px; }
+    body .space {
+      height: 170px; }
+    body .arrows {
+      width: 4vw;
+      height: 4vw; }
+    body header h1 {
+      font-size: 50px; }
+    body nav {
+      padding: 2vw 10vw; }
+      body nav .userlogin {
+        display: inline-block; }
+      body nav button:focus + .menulist {
+        left: 14.9%; }
+      body nav .menulist {
+        transform: rotatey(-90deg);
+        width: 50vw;
+        left: 0%;
+        margin-top: 34.4vw;
+        height: 45vw;
+        padding-left: 5%;
+        border-top-left-radius: 12%; }
+        body nav .menulist ul {
+          padding: 1% 20%;
+          font-size: 3vw;
+          font-weight: bolder;
+          text-align: left; }
+    body .quantity div input {
+      font-size: 4vw; }
+    body .main3 .discount {
+      padding: 7% 2% 19% 2%; }
+    body .main3 .links {
+      float: right;
+      width: 43%;
+      margin: 5% 1% 10% 1%; }
+      body .main3 .links .link .arrows {
+        width: 5%;
+        height: 20%; }
+    body .main3 .goback p {
+      margin: 0 15%; }
+    body .main3 .goback .arrows {
+      top: 5.4vw; }
+    body .main2 .links {
+      float: right;
+      width: 43%;
+      margin: 5% 1% 10% 1%; }
+      body .main2 .links .link .arrows {
+        width: 5%;
+        height: 20%; }
+    body .main2 .bottominfo {
+      margin-bottom: 10%; }
+    body .main2 .discount {
+      padding: 7% 2% 19% 2%; }
+    body main .loginbuttons .arrows {
+      top: 8.5vw; }
+    body main .mainspart {
+      padding: 1% 0; }
+    body main .books figure figcaption {
+      font-size: 2vw; }
+    body main .books figure p {
+      font-size: 2vw; }
+    body main .books figure i {
+      font-size: 4vw; }
+    body main .books .ipad {
+      display: inline-block; }
+    body main .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      body main .links .link {
+        padding: 0.01%;
+        margin: 1% 0;
+        font-weight: bolder;
+        font-size: 3vw; }
+        body main .links .link .next {
+          right: 6%; }
+        body main .links .link:hover .next {
+          right: 3%; }
+        body main .links .link .arrows {
+          border-bottom: 3px solid #000;
+          border-left: 3px solid #000;
+          width: 4%;
+          height: 35%;
+          top: 85%; }
+    body main .discount {
+      font-size: 2vw;
+      margin: 5% 1% 10% 1%;
+      width: 43%;
+      padding: 7% 2% 33% 2%;
+      float: left; }
+      body main .discount h2 {
+        width: 80%; }
+      body main .discount .herobutton {
+        font-size: 3vw;
+        top: 70%;
+        left: 30%; }
+    body main .aboutus {
+      font-size: 2vw;
+      margin: 5% 1% 10% 1%;
+      width: 43%;
+      float: right;
+      padding: 7% 2% 5% 2%; }
+    body main .bottominfo {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10%; }
+    body footer {
+      font-size: 2vw;
+      margin: 10% auto 5% auto; }
+      body footer h3 {
+        width: 85%;
+        margin: 10% auto 2% auto;
+        padding: 0 0 0 0; }
+      body footer .fa {
+        font-size: 26px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        color: #fff;
+        background: #d00;
+        padding: 3% 2% 1% 2%; } }
+@media (min-width: 769px) {
+  body {
+    max-width: 100%; }
+    body .titles {
+      font-size: 3vw; }
+    body .cubebuttons {
+      font-size: 1.5vw;
+      width: 2vw;
+      height: 2vw; }
+      body .cubebuttons:hover {
+        filter: brightness(1);
+        pointer-events: auto; }
+      body .cubebuttons:active {
+        filter: brightness(1.2); }
+    body .arrows {
+      height: 3vw;
+      width: 3vw;
+      top: 60%; }
+    body .header2 {
+      position: absolute;
+      padding: 5% 0 30% 0;
+      width: 100%;
+      margin: 0 auto; }
+      body .header2 h1 {
+        display: block;
+        margin: 0;
+        left: 0; }
+    body header {
+      display: block;
+      background: #7FA5BE;
+      margin: 0 auto;
+      position: inherit;
+      width: 100%;
+      z-index: 1;
+      padding: 0%; }
+      body header img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px; }
+      body header h1 {
+        display: none; }
+    body .space {
+      display: none; }
+    body .space2 {
+      display: block; }
+    body .nav2 .menulist {
+      background: rgba(0, 0, 0, 0); }
+    body nav {
+      justify-content: space-around;
+      margin: 0 auto;
+      padding: 0.5% 1vw 3% 1vw; }
+      body nav #ontop {
+        display: none; }
+      body nav .search {
+        display: none; }
+      body nav lable {
+        font-size: 2vw;
+        display: inline-block;
+        width: 80%;
+        border: 1px solid;
+        border-radius: 50px;
+        padding-bottom: 0.5%; }
+        body nav lable input {
+          margin-left: 2%;
+          font-style: italic;
+          font-size: 2vw;
+          width: 90%;
+          border: 0px;
+          background: rgba(0, 0, 0, 0); }
+          body nav lable input:focus {
+            outline: none; }
+      body nav .menulist {
+        background: rgba(0, 0, 0, 0);
+        border: 0px;
+        padding: 0 0 0% 0;
+        transform: rotateY(0deg);
+        width: 100%;
+        border-radius: 0px;
+        height: 40%;
+        left: 0;
+        top: 70%;
+        margin: -3% 0 0 0; }
+        body nav .menulist ul {
+          margin: 2% auto;
+          padding: 0;
+          max-width: 1200px;
+          font-size: 1.6vw;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around; }
+      body nav button {
+        font-size: 2.5vw;
+        font-weight: normal;
+        border: solid 1px;
+        border-radius: 50%;
+        width: 4vw;
+        height: 4vw;
+        text-align: center;
+        background: rgba(0, 0, 0, 0); }
+    body .main3 {
+      margin-top: -10%; }
+      body .main3 .links {
+        flex-direction: column; }
+        body .main3 .links .link {
+          font-size: 1.5vw; }
+      body .main3 .basket {
+        font-size: 3vw; }
+      body .main3 .goback {
+        margin-top: -4%;
+        margin-bottom: 5%; }
+        body .main3 .goback p {
+          font-size: 1.5vw; }
+        body .main3 .goback .arrows {
+          top: 100%;
+          left: 12%; }
+      body .main3 .tobuy {
+        margin: 0% auto 0 auto;
+        width: 75%;
+        padding: 1% 3% 1% 3%; }
+        body .main3 .tobuy .Xbutton {
+          top: 0%;
+          left: 95%; }
+        body .main3 .tobuy .tobuyimg {
+          width: 15%; }
+        body .main3 .tobuy .price {
+          font-size: 2.5vw; }
+        body .main3 .tobuy .mainquant {
+          padding: 0;
+          font-size: 1.3vw; }
+          body .main3 .tobuy .mainquant .quantity div .quantminus:hover {
+            filter: brightness(1); }
+          body .main3 .tobuy .mainquant .quantity div .quantminus:active {
+            filter: brightness(1.05); }
+          body .main3 .tobuy .mainquant .quantity div input {
+            font-size: 1.5vw;
+            width: 2vw;
+            height: 2vw; }
+      body .main3 .discount {
+        font-size: 1.5vw; }
+        body .main3 .discount .herobutton {
+          top: 70%; }
+      body .main3 .smallergift {
+        width: 40%;
+        float: left;
+        margin-left: 9%; }
+      body .main3 .itemstobuy {
+        border: 2px solid #F3B183;
+        margin: 0 auto; }
+      body .main3 .gift {
+        margin-top: 5%; }
+        body .main3 .gift input {
+          font-size: 2vw;
+          margin: 0; }
+      body .main3 label {
+        font-size: 2vw; }
+      body .main3 .addbuttons {
+        font-size: 2vw; }
+      body .main3 .totalprice {
+        float: right;
+        font-size: 2vw;
+        margin-top: 8%;
+        margin-right: 10%; }
+      body .main3 .twobuttons {
+        margin: 30% auto 0 auto;
+        display: flex;
+        justify-content: space-around;
+        width: 80%; }
+        body .main3 .twobuttons .loginbuttons {
+          margin: 0;
+          width: 30%;
+          height: 5vw; }
+          body .main3 .twobuttons .loginbuttons p {
+            margin: auto;
+            font-size: 2vw; }
+          body .main3 .twobuttons .loginbuttons .arrows {
+            width: 2vw;
+            height: 2vw;
+            top: 80%; }
+      body .main3 .or {
+        font-size: 3vw; }
+      body .main3 .finish {
+        font-size: 2vw;
+        line-height: 4vw;
+        height: 5vw;
+        width: 30%; }
+        body .main3 .finish:hover {
+          filter: brightness(1);
+          transform: translate(0px, 0px);
+          pointer-events: auto; }
+        body .main3 .finish:active {
+          filter: brightness(1.1);
+          transform: translate(1px, 1px);
+          pointer-events: none; }
+      body .main3 .delivery .gift2 {
+        margin-top: -5%; }
+    body .main2 .herobutton:hover {
+      transform: translate(0px, 0px);
+      pointer-events: auto; }
+    body .main2 .herobutton:active {
+      transform: translate(1px, 1px);
+      pointer-events: auto; }
+    body .main2 .bookinfo {
+      display: none; }
+    body .main2 .hideitem {
+      display: none; }
+    body .main2 .bookinfo2 {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      width: 85%;
+      margin: 10% auto 1% auto; }
+      body .main2 .bookinfo2 div {
+        font-size: 1.3vw; }
+      body .main2 .bookinfo2 .info2 h2 {
+        font-size: 4vw;
+        margin: 0 10%; }
+      body .main2 .bookinfo2 .info2 small {
+        margin: 0 10%; }
+      body .main2 .bookinfo2 .info2 .info {
+        margin-top: 3%; }
+      body .main2 .bookinfo2 .info2 .buyinfo .herobutton {
+        font-size: 2vw; }
+      body .main2 .bookinfo2 .info2 .buyinfo .price {
+        font-size: 2vw; }
+      body .main2 .bookinfo2 .img2 {
+        width: 70%; }
+        body .main2 .bookinfo2 .img2 img {
+          width: 100%; }
+    body .main2 .links {
+      flex-direction: column; }
+      body .main2 .links .link {
+        font-size: 1.5vw; }
+    body .main2 .discount {
+      font-size: 1.5vw; }
+      body .main2 .discount .herobutton {
+        top: 70%; }
+    body main {
+      max-width: 1200px;
+      margin: 0 auto; }
+      body main .hero {
+        display: none; }
+      body main .books figure figcaption {
+        font-size: 1.3vw; }
+      body main .books figure p {
+        font-size: 1.5vw; }
+      body main .books figure i {
+        font-size: 2vw; }
+      body main .books .computer {
+        display: inline-block; }
+      body main .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 5%; }
+        body main .links .arrows {
+          display: none; }
+        body main .links .link {
+          font-size: 1.5vw;
+          padding: 0.1% 2%; }
+          body main .links .link:hover {
+            background: #FDDDC9; }
+      body main .discount {
+        font-size: 1.3vw;
+        margin: 5% 2% 8% 2%;
+        width: 43%;
+        padding: 3% 2% 17.5% 2%;
+        float: left; }
+        body main .discount h2 {
+          width: 80%; }
+        body main .discount .herobutton {
+          font-size: 1.5vw;
+          top: 50%;
+          left: 50%; }
+          body main .discount .herobutton:hover {
+            box-shadow: 2px 2px #aaa;
+            transform: translate(0px, 0px); }
+          body main .discount .herobutton:active {
+            box-shadow: 0px 0px #aaa;
+            transform: translate(2px, 2px); }
+      body main .aboutus {
+        font-size: 1.3vw;
+        margin: 5% 1% 8% 1%;
+        width: 43%;
+        float: right;
+        padding: 3% 2% 5% 2%; }
+      body main .bottominfo {
+        margin-bottom: 10%; }
+        body main .bottominfo .links {
+          margin-bottom: 8%;
+          padding: 0; }
+          body main .bottominfo .links .link {
+            margin: 0; }
+        body main .bottominfo .discount {
+          padding: 5% 2% 10% 2%; }
+          body main .bottominfo .discount .herobutton {
+            top: 70%; }
+      body main .reviw {
+        font-size: 2vw;
+        margin-bottom: 5%; }
+        body main .reviw .viewbutton {
+          font-size: 2vw; }
+        body main .reviw .revn {
+          justify-content: space-around; }
+        body main .reviw .rate {
+          width: 60%;
+          margin-top: 10%;
+          margin-bottom: 0%; }
+          body main .reviw .rate .textinput {
+            font-size: 2vw; }
+          body main .reviw .rate .rating {
+            font-size: 2vw; }
+            body main .reviw .rate .rating .numbers:active {
+              border-bottom: 2px solid #00D5C5; }
+            body main .reviw .rate .rating .herobutton {
+              font-size: 1.5vw; }
+      body main .cube {
+        font-size: 4vw;
+        width: 6vw;
+        height: 5vw;
+        padding: 0 0 1vw 0; }
+    body footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      font-size: 1.5vw; }
+      body footer .fa {
+        font-size: 30px;
+        padding: 2% 2% 2% 2%; } }
+@media (min-width: 1201px) {
+  body .titles {
+    font-size: 36px; }
+  body .cubebuttons {
+    font-size: 18px;
+    width: 24px;
+    height: 24px; }
+  body .arrows {
+    height: 40px;
+    width: 40px; }
+  body .header2 {
+    padding-bottom: 350px; }
+  body nav {
+    padding: 0.5% 3vw 3% 3vw; }
+    body nav lable {
+      font-size: 24px; }
+      body nav lable input {
+        margin-left: 2%;
+        font-size: 24px; }
+    body nav .menulist ul {
+      font-size: 19.2px; }
+    body nav button {
+      font-size: 30px;
+      width: 48px;
+      height: 48px; }
+  body .main3 {
+    margin-top: -100px; }
+    body .main3 .links .link {
+      font-size: 18px; }
+    body .main3 .basket {
+      font-size: 36px; }
+    body .main3 .goback .arrows {
+      height: 20px;
+      width: 20px;
+      top: 35px; }
+    body .main3 .goback p {
+      font-size: 18px; }
+    body .main3 .tobuy .tobuyimg {
+      width: 100px; }
+    body .main3 .tobuy .price {
+      font-size: 30px; }
+    body .main3 .tobuy .mainquant {
+      font-size: 12px; }
+      body .main3 .tobuy .mainquant .quantity div input {
+        font-size: 18px;
+        width: 24px;
+        height: 24px; }
+    body .main3 .discount {
+      font-size: 18px; }
+    body .main3 .gift input {
+      font-size: 24px;
+      height: 60px; }
+    body .main3 label {
+      font-size: 24px; }
+    body .main3 .addbuttons {
+      font-size: 24px; }
+    body .main3 .totalprice {
+      font-size: 24px; }
+    body .main3 .twobuttons .loginbuttons {
+      height: 84px; }
+      body .main3 .twobuttons .loginbuttons p {
+        font-size: 24px; }
+      body .main3 .twobuttons .loginbuttons .arrows {
+        width: 24px;
+        height: 24px;
+        top: 60px; }
+    body .main3 .or {
+      font-size: 36px; }
+    body .main3 .finish {
+      height: 60px;
+      width: 360px;
+      font-size: 24px;
+      line-height: 48px; }
+  body .main2 .bookinfo2 div {
+    font-size: 15.6px; }
+  body .main2 .bookinfo2 .info2 h2 {
+    font-size: 48px; }
+  body .main2 .bookinfo2 .info2 .buyinfo .herobutton {
+    font-size: 24px; }
+  body .main2 .bookinfo2 .info2 .buyinfo .price {
+    font-size: 24px; }
+  body .main2 .links .link {
+    font-size: 18px; }
+  body .main2 .discount {
+    font-size: 18px; }
+  body main .cheut {
+    font-size: 68px; }
+  body main .books figure figcaption {
+    font-size: 15.6px; }
+  body main .books figure p {
+    font-size: 18px; }
+  body main .books figure i {
+    font-size: 24px; }
+  body main .links .link {
+    font-size: 18px; }
+  body main .discount {
+    font-size: 15.6px; }
+    body main .discount .herobutton {
+      font-size: 18px; }
+  body main .aboutus {
+    font-size: 15.6px; }
+  body main .reviw {
+    font-size: 24px; }
+    body main .reviw .viewbutton {
+      font-size: 24px; }
+    body main .reviw .rate .textinput {
+      font-size: 24px; }
+    body main .reviw .rate .rating {
+      font-size: 24px; }
+      body main .reviw .rate .rating .herobutton {
+        font-size: 18px; }
+  body main .cube {
+    font-size: 48px;
+    width: 72px;
+    height: 60px;
+    padding: 0 0 12px 0; }
+  body footer {
+    font-size: 18px; } }
